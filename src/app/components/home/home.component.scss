@@ -1,0 +1,90 @@
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 84px;
+}
+
+.main-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(19, 85, 160);
+
+    font-family: "Roboto", sans-serif; 
+
+    padding: 0 70px;
+    span{
+        font-size: 20px;
+        font-weight: 700;
+        color: darkgrey;
+        
+    }
+
+    h1{
+        font-size: 50px;
+        font-weight: 900;
+        color: aquamarine;
+
+    }
+}
+
+.DescricaoEmpresa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 70px;
+    font-family: "Roboto", sans-serif; 
+   
+    .descricaoImagem{
+        padding-bottom: 40px;
+        padding-right: 40px;
+
+    }
+    .descricaoImagem img{
+        border: 3px solid #0000ff; /* Borda azul de 3px */
+        border-radius: 15px; /* Bordas arredondadas */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    }
+
+    p{
+        font-size: 25px;
+        font-style: italic;
+        padding-bottom: 40px;
+ 
+
+    }
+
+}
+.SisBusca{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 70px;
+    font-family: "Roboto", sans-serif;
+    ///colocar o H1 e p
+}
+
+.cta-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (min-width: 1080px) {
+    .main-section{
+        flex-direction: row;
+    }
+    .DescricaoEmpresa{
+        flex-direction: row;
+    
+    }
+}
