@@ -64,15 +64,54 @@ main{
     }
 
 }
-.SisBusca{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 70px;
+
+
+
+
+/* Estilo para o contêiner da seção de cadastro */
+.cadastro {
+    display: flex; /* Usando flexbox para alinhar os itens lado a lado */
+    background-color: rgb(19, 85, 160);
+    flex-direction: row; /* Coloca os elementos na horizontal, com a imagem à esquerda e o formulário à direita */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    justify-content: center; /* Alinha os itens no centro horizontalmente */
     font-family: "Roboto", sans-serif;
-    ///colocar o H1 e p
+    gap: 60px; /* Adiciona um espaço entre o formulário e a imagem */
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte em telas pequenas */
 }
+
+/* Estilo da imagem */
+.imagem-cadastro {
+    max-width: 50%; /* A largura máxima da imagem será 50% do tamanho disponível */
+    height: auto; /* Mantém a proporção da imagem */
+    flex: 1 1 300px; /* Permite que a imagem encolha ou cresça, mas ocupe no mínimo 300px de largura */
+}
+
+/* Estilo para o formulário */
+.app-formulario {
+    max-width: 500px; /* Limita a largura máxima do formulário */
+    flex: 1 1 400px; /* Permite que o formulário encolha ou cresça, mas ocupe no mínimo 400px de largura */
+}
+
+
+ 
+.busca {
+    display: flex; /* Usando flexbox para alinhar os itens lado a lado */
+    flex-direction: row; 
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    justify-content: center; /* Alinha os itens no centro horizontalmente */
+    font-family: "Roboto", sans-serif;
+
+}
+
+
+/* Estilo para o formulário */
+.app-busca {
+    max-width: 500px; /* Limita a largura máxima do formulário */
+    flex: 1 1 400px; /* Permite que o formulário encolha ou cresça, mas ocupe no mínimo 400px de largura */
+}
+
+
 
 .cta-section{
     display: flex;

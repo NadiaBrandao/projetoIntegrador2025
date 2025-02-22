@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import axios from 'axios';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,14 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'PISisRecomendacao';
+}
+
+const api = axios.create({
+  baseURL:'https://localhost:3000'
+})
+
+function app(){
+  api.get('/usuarios').then((response)=> {
+    console.log(response.data)
+  })
 }

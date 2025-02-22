@@ -2,25 +2,25 @@
 <main>
     <section class="main-section">
         <div class="headline">
-        <span>DESTINO IDEAL</span>
-        <h1>
-            Descubra, planeje e aproveite o melhor que o mundo tem a oferecer!
-        </h1>
-
+            <span>DESTINO IDEAL</span>
+            <h1>
+                Descubra, planeje e aproveite o melhor que o mundo tem a oferecer!
+            </h1>
         </div>
         <img ngSrc="/assets/viajar.png" width="400" height="350">     
     </section>
 
     <section class="DescricaoEmpresa">
-        <div class="descricaoImagem"> <img ngSrc="/assets/logo.PNG" width="350" height="300"></div>
+        <div class="descricaoImagem"> 
+            <img ngSrc="/assets/logo.PNG" width="350" height="300">
+        </div>
         <p>O Destino Ideal é uma empresa dedicada a facilitar sua busca por experiências inesquecíveis.
             Nosso sistema de recomendação conecta você aos melhores destinos turísticos, bares, parques, bibliotecas e muito mais. 
-            Com tecnologia de ponta e foco no que você realmente procura, ajudamos a transformar seus momentos de lazer em memórias inesquecíveis</p>
-        
-        
+            Com tecnologia de ponta e foco no que você realmente procura, ajudamos a transformar seus momentos de lazer em memórias inesquecíveis.
+        </p>
     </section>
 
-    <section class="cta-section">
+    <!-- <section class="cta-section"> 
         <btn-primary btn-text="Cadastre-se aqui!"></btn-primary>
     </section>
     <section class="SisBusca">
@@ -28,18 +28,27 @@
         <p>Selecione os filtros abaixo para encontrar os melhores estabelecimentos em sua região:</p>
       
         <newsletter-form></newsletter-form>
+    </section> -->
 
-
-       
+    <section class="cadastro">
+        <img class="imagem-cadastro" ngSrc="/assets/dicas-de-viagem.jpg" width="600" height="500">  
+        <app-formulario></app-formulario>
     </section>
 
-   
-      
+    <section class="busca">
+        <!-- <app-busca1></app-busca1> -->
+    </section>
+
+    <!-- testes busca1-->
+    <section>
+        <app-busca1></app-busca1>
+    </section>
+
     <footer>
         <div class="infoContato">
             <p>Site Criado para Projeto Integrador Univesp</p>
             <p>Grupo XXX</p>
-
         </div>
     </footer>
 </main>
+

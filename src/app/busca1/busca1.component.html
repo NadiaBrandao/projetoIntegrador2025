@@ -1,0 +1,61 @@
+<form [formGroup]="buscaForm" (ngSubmit)="onBuscar()">
+    <div class="form-group">
+        <label for="serviceType">Tipo estabelecimento:</label>
+        <select formControlName="serviceType" required>
+            <option value="">Selecione...</option>
+            <option value="bar">Bares</option>
+            <option value="restaurant">Restaurantes</option>
+            <option value="park">Parques</option>
+            <option value="library">Bibliotecas</option>
+            <option value="tourist_attraction">Turismo</option>
+            <option value="point_of_interest">Outros</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="state">Estado:</label>
+        <select formControlName="state" required>
+            <option value="">Selecione...</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <!-- Adicione os outros estados -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="city">Cidade:</label>
+        <input type="text" formControlName="city" placeholder="Ex: São Paulo" required>
+    </div>
+
+    <div class="form-group">
+        <label for="neighborhood">Bairro:</label>
+        <input type="text" formControlName="neighborhood" placeholder="Ex: Vila Mariana">
+    </div>
+
+    <div class="form-group">
+        <label for="rating">Avaliação:</label>
+        <select formControlName="rating" required>
+            <option value="">Selecione...</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+
+    <button type="submit">Buscar</button>
+</form>
+
+<div id="results">
+    <h3>Resultados:</h3>
+    <ul>
+        <li *ngFor="let lugar of resultados">
+            {{ lugar.name }} - Nota: {{ lugar.rating }}
+        </li>
+    </ul>
+</div>
+
+
+
+  
