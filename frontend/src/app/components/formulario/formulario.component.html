@@ -1,4 +1,4 @@
-<section class="form-section">
+<!--<section class="form-section">
     <h2>Cadastre-se aqui!</h2>
     <form>
     <label for="Nome">Nome</label>
@@ -8,4 +8,39 @@
     <button type="submit">Cadastrar</button>
 
 </form>
+</section> -->
+
+<section class="form-section">
+    <h2>Cadastre-se aqui!</h2>
+    <form>
+        <label for="Nome">Nome</label>
+        <input id="Nome" type="text" required />
+
+        <label for="Sobrenome">Sobrenome</label>
+        <input id="Sobrenome" type="text" required />
+
+        <label for="Email">Email</label>
+        <input id="Email" type="email" required />
+
+        <label for="Senha">Senha</label>
+        <input id="Senha" type="password" required />
+
+        <label for="Genero">Gênero</label>
+        <select id="Genero" required>
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+            <option value="nao_binario">Não binário</option>
+            <option value="transgenero">Transgênero</option>
+            <option value="prefiro_nao_informar">Prefiro não informar</option>
+        </select>
+
+        <label for="DataNascimento">Data de Nascimento</label>
+        <input id="DataNascimento" type="text" placeholder="dd/mm/aaaa" required pattern="([0-2][0-9]|(3)[0-1])/(0[1-9]|1[0-2])/\d{4}" title="Formato esperado: dd/mm/aaaa" />
+
+        <label for="Idade">Idade</label>
+        <input id="Idade" type="number" required min="1" />
+
+        <button type="submit">Cadastrar</button>
+    </form>
 </section>
+
