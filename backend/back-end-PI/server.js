@@ -150,7 +150,7 @@ app.delete('/usuarios/:id', async (req, res) => {
     }
 });
 
-// Inicializando o servidor na porta 3000
+// Inicializando o servidor na porta 3000 railway
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
