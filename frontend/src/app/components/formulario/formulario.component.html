@@ -35,6 +35,7 @@
 
 <section class="form-section">
     <h2>Cadastre-se aqui!</h2>
+    <!--
     <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
         <label for="Nome">Nome</label>
         <input type="text" formControlName="name" required />
@@ -64,8 +65,9 @@
         <input type="number" formControlName="age" required min="1" />
        
         <button type="submit">Cadastrar</button>
-
+        
         <!-- 🔹 Mensagem de sucesso que aparece depois do cadastro -->
         <p *ngIf="mensagemSucesso" class="sucesso">{{ mensagemSucesso }}</p>
-    </form>
+    <!--</form>-->
+        
 </section>

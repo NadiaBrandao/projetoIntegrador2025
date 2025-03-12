@@ -3,6 +3,8 @@ import { PrismaClient } from '@prisma/client';
 import cors from 'cors';
 import axios from 'axios';
 
+import path from 'path';
+
 const prisma = new PrismaClient();
 const app = express();
 
@@ -155,7 +157,14 @@ app.listen(3000, () => {
     console.log('Servidor rodando na porta 3000');
 });
 
+//Aqui teste pagina inicial #RF
+//import { fileURLToPath } from 'url';
+//const __filename = fileURLToPath(import.meta.url);
+//const __dirname = path.dirname(__filename);//
 
+//app.use(express.static(path.join(__dirname, '\frontend\src\index.html')));//
 
-
-
+//app.get('*', (req, res) => {
+//    res.sendFile(__dirname ,'/')
+//});//
+//

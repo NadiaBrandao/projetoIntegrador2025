@@ -92,3 +92,34 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+
+.tResultado{
+
+    width: 90%;
+    align-self: center;
+    padding: 10px;
+    table {
+        border-spacing: 0; /* Remove o espaçamento entre as células */
+        border-radius: 10px; /* Arredonda os cantos da tabela */
+    }
+    /* Estiliza o cabeçalho da tabela */
+    th {
+        font-weight: bold; /* Deixa os nomes das colunas em negrito */
+        background-color: #c6c6cc; /* Cinza escuro para o título */
+        /*color: #FFFFFF; /* Texto branco para contraste */
+        padding: 10px; /* Adiciona espaçamento interno */
+        text-align: center; /* Alinha o texto à esquerda */
+        
+    }
+    
+    /* Estiliza as células da tabela */
+    td {
+        padding: 10px; /* Adiciona espaçamento interno */
+        /*border: 0px solid #b61e1e; /* Cria bordas finas */
+        text-align: center; /* Alinha o texto à esquerda */
+        background-color: #e2e2e2; /* Adiciona um fundo cinza claro */
+    }
+    
+
+}

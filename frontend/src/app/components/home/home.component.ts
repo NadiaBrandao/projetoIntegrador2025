@@ -8,8 +8,7 @@ import { Busca1Component } from "../../busca1/busca1.component";
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent,
-    NgOptimizedImage, ReactiveFormsModule, FormularioComponent, Busca1Component],
+  imports: [HeaderComponent,NgOptimizedImage, ReactiveFormsModule, FormularioComponent, Busca1Component],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
