@@ -151,6 +151,19 @@ app.delete('/usuarios/:id', async (req, res) => {
 });
 
 // Inicializando o servidor na porta 3000 railway
+
+async function testDatabaseConnection() {
+    try {
+        await prisma.$connect();
+        console.log("✅ Prisma conectado ao MongoDB com sucesso!");
+    } catch (error) {
+        console.error("❌ Erro ao conectar ao MongoDB via Prisma:", error);
+        process.exit(1); // Encerra o processo se a conexão falhar
+    }
+}
+
+testDatabaseConnection();
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
