@@ -149,6 +149,10 @@ app.delete('/usuarios/:id', async (req, res) => {
         res.status(500).json({ error: 'Erro ao deletar o usuário.' });
     }
 });
+//adc rota teste
+app.get('/', (req, res) => {
+    res.send("✅ API rodando corretamente!");
+});
 
 // Inicializando o servidor na porta 3000 railway
 
@@ -164,7 +168,7 @@ async function testDatabaseConnection() {
 
 testDatabaseConnection();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
