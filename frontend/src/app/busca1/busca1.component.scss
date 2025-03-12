@@ -3,10 +3,29 @@
 }
 
 .result {
+    
+    width: 80%;
+    margin-bottom: 15px;
+    height: auto;
+
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    font-family: "Roboto", sans-serif; 
+
+    max-width: 900px; /* Máximo de 1200px de largura */
+    min-width: 300px; /* Mínimo de 300px de largura */
+
+    height: auto; /* Altura ajustável conforme o conteúdo */
+    //min-height: 200px; /* Mínimo de 200px de altura */
+    //max-height: 600px; /* Máximo de 600px de altura */
+
+    margin: 0 auto; /* Centraliza a div */
+
+    text-align: center;
+    overflow: auto; /* Garante que a tabela expanda corretamente */
+
 }
 
 .result p {
@@ -25,6 +44,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #008cff;  /* Cor de fundo laranja */
     color: #333;
+    
 }
 
 header {
@@ -53,7 +73,16 @@ form {
 }
 
 .form-group {
-    margin-bottom: 15px;
+    //margin-bottom: 15px;
+    width: 80%;
+    align-self: center;
+    padding: 10px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif; 
+
+    max-width: 900px; /* Máximo de 1200px de largura */
+    min-width: 300px; /* Mínimo de 300px de largura */
+
 }
 
 label {
@@ -99,6 +128,18 @@ footer {
     width: 90%;
     align-self: center;
     padding: 10px;
+    font-family: "Roboto", sans-serif; 
+
+    max-width: 900px; /* Máximo de 1200px de largura */
+    min-width: 300px; /* Mínimo de 300px de largura */
+
+    height: auto; /* Altura ajustável conforme o conteúdo */
+    min-height: 200px; /* Mínimo de 200px de altura */
+    max-height: 600px; /* Máximo de 600px de altura */
+
+    margin: 0 auto; /* Centraliza a div */
+
+
     table {
         border-spacing: 0; /* Remove o espaçamento entre as células */
         border-radius: 10px; /* Arredonda os cantos da tabela */
