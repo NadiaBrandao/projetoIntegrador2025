@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { API_URL } from '../config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BuscarService {
-  private apiUrl = 'http://localhost:3000/api/buscar-local'; 
+  private apiUrl = `${API_URL}/api/buscar-local`;
 
   constructor(private http: HttpClient) {}
 

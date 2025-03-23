@@ -16,6 +16,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { API_URL } from '../../../config';
 
 @Component({
     selector: 'app-formulario',
@@ -42,7 +43,7 @@ export class FormularioComponent {
 
     onSubmit() {
         if (this.cadastroForm.valid) {
-            this.http.post('http://localhost:3000/usuarios', this.cadastroForm.value)
+            this.http.post(`${API_URL}/usuarios`, this.cadastroForm.value)
                 .subscribe(
                     response => {
                         console.log('✅ Usuário cadastrado com sucesso:', response);

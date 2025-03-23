@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import axios from 'axios';
+import { API_URL } from '../config';
+
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,7 @@ export class AppComponent {
 }
 
 const api = axios.create({
-  baseURL:'https://localhost:3000'
+  baseURL: API_URL
 })
 
 function app(){
