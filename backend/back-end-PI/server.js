@@ -10,10 +10,11 @@ app.use(express.json());
 
 // ✅ Permite que o Angular acesse o backend
 app.use(cors({
-    origin: 'http://localhost:4200', // Permitir apenas o frontend Angular
-    methods: ['GET', 'POST'],
+    origin: ['http://localhost:4200', 'projeto-integrador2025.vercel.app'], // Adicione a URL da Vercel aqui
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
 }));
+
 
 // Rota de teste para ver se o CORS está funcionando
 app.get('/api/teste', (req, res) => {
