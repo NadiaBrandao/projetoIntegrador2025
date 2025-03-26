@@ -10,7 +10,7 @@ app.use(express.json());
 
 // ✅ Permite que o Angular acesse o backend
 app.use(cors({
-    origin: ['http://localhost:4200', 'https://sage-kelpie-dad2a8.netlify.app'], // url front
+    origin: ['http://localhost:4200', 'https://destinoideal.netlify.app'], // url front
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
 }));
