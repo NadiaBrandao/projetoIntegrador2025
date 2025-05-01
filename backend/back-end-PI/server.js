@@ -3,8 +3,6 @@ import { PrismaClient } from '@prisma/client';
 import cors from 'cors';
 import axios from 'axios';
 
-import path from 'path';
-
 const prisma = new PrismaClient();
 const app = express();
 
@@ -12,10 +10,11 @@ app.use(express.json());
 
 // ✅ Permite que o Angular acesse o backend
 app.use(cors({
-    origin: 'http://localhost:4200', // Permitir apenas o frontend Angular
-    methods: ['GET', 'POST'],
+    origin: ['http://localhost:4200', 'https://idealdestino.netlify.app'], // url front
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
 }));
+
 
 // Rota de teste para ver se o CORS está funcionando
 app.get('/api/teste', (req, res) => {
@@ -39,7 +38,7 @@ app.post('/api/buscar-local', async (req, res) => {
         const response = await axios.get(googleMapsUrl, {
             params: {
                 query: `${serviceType} in ${locationQuery}`,
-                key: 'AIzaSyAUv4aDM-Crk8l8VxCRaGvndOMKGIasoKc'
+                key: 'AIzaSyAUv4aDM-Crk8l8VxCRaGvndOMKGIasoKc' //trocar chave vencida
             }
         });
 
@@ -101,18 +100,11 @@ app.get('/usuarios', async (req, res) => {
 
 // Rota para atualizar um usuário
 app.put('/usuarios/:id', async (req, res) => {
-    const { email, name, lastName, password, gender, birthDate, age } = req.body;
+    const { email, name, lastName, password, gender, birthDate } = req.body;
 
     // Validar os campos
-    if (!email || !name || !lastName || !password || !gender || !birthDate || !age) {
+    if (!email || !name || !lastName || !password || !gender || !birthDate) {
         return res.status(400).json({ error: 'Todos os campos são obrigatórios!' });
-    }
-
-    // Garantir que o campo 'age' seja um número
-    const ageNumber = Number(age);
-
-    if (isNaN(ageNumber)) {
-        return res.status(400).json({ error: 'Idade inválida. Deve ser um número.' });
     }
 
     try {
@@ -125,7 +117,6 @@ app.put('/usuarios/:id', async (req, res) => {
                 password,
                 gender,
                 birthDate,
-                age: ageNumber // Atualizando a idade como número
             }
         });
 
@@ -151,20 +142,26 @@ app.delete('/usuarios/:id', async (req, res) => {
         res.status(500).json({ error: 'Erro ao deletar o usuário.' });
     }
 });
-
-// Inicializando o servidor na porta 3000
-app.listen(3000, () => {
-    console.log('Servidor rodando na porta 3000');
+//adc rota teste
+app.get('/', (req, res) => {
+    res.send("✅ API rodando corretamente!");
 });
 
-//Aqui teste pagina inicial #RF
-//import { fileURLToPath } from 'url';
-//const __filename = fileURLToPath(import.meta.url);
-//const __dirname = path.dirname(__filename);//
+// Inicializando o servidor na porta 3000 railway
 
-//app.use(express.static(path.join(__dirname, '\frontend\src\index.html')));//
+async function testDatabaseConnection() {
+    try {
+        await prisma.$connect();
+        console.log("✅ Prisma conectado ao MongoDB com sucesso!");
+    } catch (error) {
+        console.error("❌ Erro ao conectar ao MongoDB via Prisma:", error);
+        process.exit(1); // Encerra o processo se a conexão falhar
+    }
+}
 
-//app.get('*', (req, res) => {
-//    res.sendFile(__dirname ,'/')
-//});//
-//
+testDatabaseConnection();
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});

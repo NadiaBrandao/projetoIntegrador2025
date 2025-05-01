@@ -21,7 +21,6 @@ model User {
   password  String
   gender    String
   birthDate String
-  age       Int
 }
 
 
