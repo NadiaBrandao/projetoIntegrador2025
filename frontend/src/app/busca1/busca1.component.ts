@@ -34,6 +34,15 @@ export class Busca1Component {
     this.buscarService.buscarLocal(filtros).subscribe(
       (response) => {
         console.log('✅ Resposta do servidor:', response);
+
+        //alterei aqui
+        //Ordenando por rating
+        response.results.sort((a: { name: string, rating: number }, b: { name: string, rating: number }) =>         
+          b.rating - a.rating
+        );
+
+        
+
         this.resultados = response.results; 
       },
       (error) => {

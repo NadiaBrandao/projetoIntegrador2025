@@ -44,19 +44,44 @@
             <option value="5">5</option>
         </select>
     </div>
-
-    <button type="submit">Buscar</button>
+    <div class="form-group">
+        <button type="submit">Buscar</button>
+    </div>
 </form>
 
-<div id="results">
-    <h3>Resultados:</h3>
+<div id="results" class="result">
+    <h3>Resultados</h3>
+    <!--
     <ul>
         <li *ngFor="let lugar of resultados">
             {{ lugar.name }} - Nota: {{ lugar.rating }}
         </li>
     </ul>
+    -->
+
+    <table class="tResultado">
+        <thead>
+            <tr>
+                <th>Nome do Lugar</th>
+                <th>Nota</th>
+                <th>Quantidade de Avaliações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lugar of resultados">
+                <td>{{ lugar.name }}</td>
+                <td>{{ lugar.rating }}</td>
+                <td>{{ lugar.user_ratings_total }}</td>
+    
+            </tr>
+        </tbody>
+    </table>
+
+
 </div>
 
 
 
-  
+
+
+

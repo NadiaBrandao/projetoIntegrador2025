@@ -10,7 +10,9 @@ app.use(express.json());
 
 // ✅ Permite que o Angular acesse o backend
 app.use(cors({
+
     origin: ['http://localhost:4200', 'https://destinoideal.netlify.app'], // url front
+
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
 }));
@@ -38,7 +40,7 @@ app.post('/api/buscar-local', async (req, res) => {
         const response = await axios.get(googleMapsUrl, {
             params: {
                 query: `${serviceType} in ${locationQuery}`,
-                key: 'AIzaSyAUv4aDM-Crk8l8VxCRaGvndOMKGIasoKc'
+                key: 'AIzaSyAUv4aDM-Crk8l8VxCRaGvndOMKGIasoKc' //trocar chave vencida
             }
         });
 
@@ -100,18 +102,11 @@ app.get('/usuarios', async (req, res) => {
 
 // Rota para atualizar um usuário
 app.put('/usuarios/:id', async (req, res) => {
-    const { email, name, lastName, password, gender, birthDate, age } = req.body;
+    const { email, name, lastName, password, gender, birthDate } = req.body;
 
     // Validar os campos
-    if (!email || !name || !lastName || !password || !gender || !birthDate || !age) {
+    if (!email || !name || !lastName || !password || !gender || !birthDate) {
         return res.status(400).json({ error: 'Todos os campos são obrigatórios!' });
-    }
-
-    // Garantir que o campo 'age' seja um número
-    const ageNumber = Number(age);
-
-    if (isNaN(ageNumber)) {
-        return res.status(400).json({ error: 'Idade inválida. Deve ser um número.' });
     }
 
     try {
@@ -124,7 +119,6 @@ app.put('/usuarios/:id', async (req, res) => {
                 password,
                 gender,
                 birthDate,
-                age: ageNumber // Atualizando a idade como número
             }
         });
 
@@ -173,8 +167,6 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
 });
-
-
 
 
 
