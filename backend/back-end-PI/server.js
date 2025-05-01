@@ -11,7 +11,7 @@ app.use(express.json());
 // ✅ Permite que o Angular acesse o backend
 app.use(cors({
 
-    origin: ['http://localhost:4200', 'https://destinoideal.netlify.app'], // url front
+    origin: ['http://localhost:4200', 'https://idealdestino.netlify.app'], // url front
 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type']
@@ -59,18 +59,11 @@ app.post('/api/buscar-local', async (req, res) => {
 
 // Rota para criar um novo usuário
 app.post('/usuarios', async (req, res) => {
-    const { email, name, lastName, password, gender, birthDate, age } = req.body;
+    const { email, name, lastName, password, gender, birthDate} = req.body;
 
     // Verificar se todos os campos obrigatórios foram preenchidos
-    if (!email || !name || !lastName || !password || !gender || !birthDate || !age) {
+    if (!email || !name || !lastName || !password || !gender || !birthDate) {
         return res.status(400).json({ error: 'Todos os campos são obrigatórios!' });
-    }
-
-    // Garantir que o campo 'age' seja um número
-    const ageNumber = Number(age);
-
-    if (isNaN(ageNumber)) {
-        return res.status(400).json({ error: 'Idade inválida. Deve ser um número.' });
     }
 
     // Criar o usuário
@@ -82,8 +75,7 @@ app.post('/usuarios', async (req, res) => {
                 lastName,
                 password,
                 gender,
-                birthDate,
-                age: ageNumber // Armazenando a idade como número
+                birthDate
             }
         });
 
