@@ -40,7 +40,7 @@ app.post('/api/buscar-local', async (req, res) => {
         const response = await axios.get(googleMapsUrl, {
             params: {
                 query: `${serviceType} in ${locationQuery}`,
-                key: 'AIzaSyAUv4aDM-Crk8l8VxCRaGvndOMKGIasoKc' //trocar chave vencida
+                key: 'AIzaSyBmtVTNGzgjfzUSsu49cbTIpFeNiaACo2Y' //trocar chave 
             }
         });
 
